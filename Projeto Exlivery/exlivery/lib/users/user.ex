@@ -15,5 +15,4 @@ def build(name, email, cpf, age) when age >= 18 and is_bitstring(cpf) do
 end
 
 def build(_name, _email, _cpf, _age), do: {:error,"Invalid Parameters"}
-
 end
