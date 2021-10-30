@@ -4,7 +4,7 @@ defmodule Exlivery.Users.UserTest do
    alias Exlivery.Users.User
 
    import Exlivery.Factory
- 
+
  describe "build/5" do
    test "when all params are valid, return the user" do
      response = User.build(
@@ -35,7 +35,7 @@ defmodule Exlivery.Users.UserTest do
 
        expected_response ={:error, "Invalid Parameters"}
        assert response == expected_response
-      
+
     end
 
  end
