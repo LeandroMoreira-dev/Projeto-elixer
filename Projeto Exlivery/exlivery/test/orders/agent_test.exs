@@ -1,8 +1,9 @@
 defmodule Exlivery.Orders.AgentTest do
   use ExUnit.Case
-  alias Exlivery.Orders.Agent, as: OrderAgent
-  alias Exlivery.Orders.Order
+
   import Exlivery.Factory
+
+  alias Exlivery.Orders.Agent, as: OrderAgent
 
   describe "save/1" do
     test "saves the order" do
@@ -22,13 +23,13 @@ defmodule Exlivery.Orders.AgentTest do
    :ok
   end
       test "when the user is found, returns the order"  do
-         
+
         order = build(:order)
         {:ok, uuid} =  OrderAgent.save(order)
 
             response = OrderAgent.get(uuid)
 
-            expected_response =  {:ok, order }                                  
+            expected_response =  {:ok, order }
 
             assert response == expected_response
       end
