@@ -1,6 +1,6 @@
 defmodule Exlivery.Orders.Agent do
 
- 
+
   alias Exlivery.Orders.Order
   use Agent
 
@@ -18,6 +18,8 @@ uuid = UUID.uuid4()
 end
 
 def get(uuid), do: Agent.get(__MODULE__, &get_order(&1, uuid))
+
+def list_all, do: Agent.get(__MODULE__, & &1)
 
 defp get_order(state, uuid) do
   case Map.get(state, uuid) do
